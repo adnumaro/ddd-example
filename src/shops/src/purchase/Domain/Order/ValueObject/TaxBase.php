@@ -1,6 +1,6 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject;
+namespace PurchaseTest\Shops\Purchase\Domain\Order\ValueObject;
 
 use PurchaseTest\Shared\Domain\ValueObject\FloatValueObject;
 

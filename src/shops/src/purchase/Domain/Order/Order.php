@@ -1,18 +1,23 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Domain\PurchaseOrder;
+namespace PurchaseTest\Shops\Purchase\Domain\Order;
 
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Invoices;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Reference;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\TaxBase;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Discount;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\EmissionDate;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Observations;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Tax;
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\ValueObject\Total;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\LineItems;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Reference;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\TaxBase;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Discount;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\EmissionDate;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Observations;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Tax;
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Total;
 
-class PurchaseOrder
+class Order
 {
+    /**
+     * @var Id
+     */
+    private $id;
+
     /**
      * @var Reference
      */
@@ -49,9 +54,9 @@ class PurchaseOrder
     private $total;
 
     /**
-     * @var Invoices
+     * @var LineItems
      */
-    private $invoices;
+    private $lineItems;
 
     public function __construct(
         Reference $reference,
@@ -61,7 +66,7 @@ class PurchaseOrder
         TaxBase $taxBase,
         Observations $observations,
         Total $total,
-        Invoices $invoices
+        LineItems $lineItems
     ) {
         $this->reference    = $reference;
         $this->emissionDate = $emissionDate;
@@ -70,7 +75,7 @@ class PurchaseOrder
         $this->taxBase      = $taxBase;
         $this->observations = $observations;
         $this->total        = $total;
-        $this->invoices     = $invoices;
+        $this->lineItems    = $lineItems;
     }
 
     /**
@@ -130,10 +135,10 @@ class PurchaseOrder
     }
 
     /**
-     * @return Invoices
+     * @return LineItems
      */
-    public function getInvoices() : Invoices
+    public function getLineItems() : LineItems
     {
-        return $this->invoices;
+        return $this->lineItems;
     }
 }

@@ -1,19 +1,25 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Domain\Invoice;
+namespace PurchaseTest\Shops\Purchase\Domain\OrderItem;
 
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\Amount;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\Discount;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\DiscountPercent;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\Price;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\ProductName;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\Tax;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\TaxBase;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\Total;
-use PurchaseTest\Shops\Purchase\Domain\Invoice\ValueObject\VAT;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Amount;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Discount;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\DiscountPercent;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Id;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Price;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\ProductName;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Tax;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\TaxBase;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\Total;
+use PurchaseTest\Shops\Purchase\Domain\OrderItem\ValueObject\VAT;
 
-final class Invoice
+final class LineItem
 {
+    /**
+     * @var Id
+     */
+    private $id;
+
     /**
      * @var ProductName
      */
@@ -60,6 +66,7 @@ final class Invoice
     private $total;
 
     public function __construct(
+        Id $id,
         ProductName $productName,
         Amount $amount,
         Price $price,
@@ -70,6 +77,7 @@ final class Invoice
         VAT $vat,
         Total $total
     ) {
+        $this->id              = $id;
         $this->productName     = $productName;
         $this->amount          = $amount;
         $this->price           = $price;
@@ -79,6 +87,11 @@ final class Invoice
         $this->discountPercent = $discountPercent;
         $this->vat             = $vat;
         $this->total           = $total;
+    }
+
+    public function getId() : Id
+    {
+        return $this->id;
     }
 
     /**

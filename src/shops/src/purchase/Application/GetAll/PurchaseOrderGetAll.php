@@ -4,7 +4,7 @@ namespace PurchaseTest\Shops\Purchase\Application\Extract;
 
 use PurchaseTest\Shops\Purchase\Application\PurchaseOrderUseCases;
 
-final class PurchaseOrderExtracter extends PurchaseOrderUseCases
+final class PurchaseOrderGetAll extends PurchaseOrderUseCases
 {
     public function __invoke()
     {

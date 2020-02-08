@@ -89,6 +89,9 @@ final class LineItem
         $this->total           = $total;
     }
 
+    /**
+     * @return Id
+     */
     public function getId() : Id
     {
         return $this->id;

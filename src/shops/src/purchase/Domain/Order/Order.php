@@ -2,6 +2,7 @@
 
 namespace PurchaseTest\Shops\Purchase\Domain\Order;
 
+use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Id;
 use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\LineItems;
 use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Reference;
 use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\TaxBase;
@@ -59,6 +60,7 @@ class Order
     private $lineItems;
 
     public function __construct(
+        Id $id,
         Reference $reference,
         EmissionDate $emissionDate,
         Discount $discount,
@@ -68,6 +70,7 @@ class Order
         Total $total,
         LineItems $lineItems
     ) {
+        $this->id           = $id;
         $this->reference    = $reference;
         $this->emissionDate = $emissionDate;
         $this->discount     = $discount;
@@ -76,6 +79,14 @@ class Order
         $this->observations = $observations;
         $this->total        = $total;
         $this->lineItems    = $lineItems;
+    }
+
+    /**
+     * @return Id
+     */
+    public function getId() : Id
+    {
+        return $this->id;
     }
 
     /**

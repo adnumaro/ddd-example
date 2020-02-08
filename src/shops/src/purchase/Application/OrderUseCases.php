@@ -2,9 +2,9 @@
 
 namespace PurchaseTest\Shops\Purchase\Application;
 
-use PurchaseTest\Shops\Purchase\Domain\PurchaseOrder\OrderRepository;
+use PurchaseTest\Shops\Purchase\Domain\Order\OrderRepository;
 
-abstract class PurchaseOrderUseCases
+abstract class OrderUseCases
 {
     protected $repository;
 

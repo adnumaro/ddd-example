@@ -18,12 +18,13 @@
     "autoload": {
         "psr-4": {
             "PurchaseTest\\": "src/",
-            "PurchaseTest\\Shops\\": "src/shops/src"
+            "PurchaseTest\\Shops\\": "src/shops/src",
+            "PurchaseTest\\Shared\\": "src/shared/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PurchaseTest\\Tests\\Shops\\": "tests/src/shops/src"
+            "PurchaseTest\\Tests\\": "tests/src"
         }
     }
 }

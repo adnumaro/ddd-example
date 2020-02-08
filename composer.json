@@ -1,0 +1,29 @@
+{
+    "name": "adnumaro/purchase-test",
+    "type": "project",
+    "require": {
+        "php": ">=7.2",
+        "ext-json": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "adnumaro",
+            "email": "adnumaro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PurchaseTest\\": "src/",
+            "PurchaseTest\\Shops\\": "src/shops/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PurchaseTest\\Tests\\Shops\\": "tests/src/shops/src"
+        }
+    }
+}

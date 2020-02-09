@@ -3,10 +3,13 @@
     "type": "project",
     "require": {
         "php": ">=7.2",
-        "ext-json": "^7.4"
+        "ext-json": "^7.4",
+        "vlucas/phpdotenv": "^4.1",
+        "nesbot/carbon": "^2.29"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "fzaninotto/faker": "^1.9"
     },
     "license": "MIT",
     "authors": [
@@ -17,14 +20,16 @@
     ],
     "autoload": {
         "psr-4": {
-            "PurchaseTest\\": "src/",
-            "PurchaseTest\\Shops\\": "src/shops/src",
-            "PurchaseTest\\Shared\\": "src/shared/src"
+            "Shops\\": "src/shops/src",
+            "Shared\\": "src/shared/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PurchaseTest\\Tests\\": "tests/src"
+            "Tests\\": ["tests/src"]
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }

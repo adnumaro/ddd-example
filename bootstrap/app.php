@@ -2,4 +2,7 @@
 
 $rootPath = dirname(__DIR__);
 
-require $rootPath . '/vendor/autoload.php';
+require_once $rootPath . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable($rootPath);
+$dotenv->load();

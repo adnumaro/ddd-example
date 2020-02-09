@@ -15,7 +15,7 @@ use Tests\Shops\Order\Domain\Order\ValueObject\LineItemsStub;
 final class OrderTest extends TestCase
 {
     /** @test */
-    public function it_apply_15_percent_of_discount_to_each_line_item_when_total_is_greater_than_20() : void
+    public function it_should_apply_15_percent_of_discount_to_each_line_item_when_total_is_greater_than_20() : void
     {
         $quantity        = 1;
         $price           = 10;
@@ -38,7 +38,7 @@ final class OrderTest extends TestCase
     }
 
     /** @test */
-    public function it_apply_8_percent_of_discount_to_each_line_item_when_total_is_greater_than_10() : void
+    public function it_should_apply_8_percent_of_discount_to_each_line_item_when_total_is_greater_than_10() : void
     {
         $quantity        = 1;
         $price           = 5;

@@ -14,6 +14,6 @@ class IdStub
 
     public static function random(): Id
     {
-        return self::create(MotherCreator::fake()->unique()->randomDigit);
+        return self::create(MotherCreator::fake()->randomNumber());
     }
 }

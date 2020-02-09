@@ -37,6 +37,11 @@ class Order
     private $discount;
 
     /**
+     * @var DiscountPercent
+     */
+    private $discountPercent;
+
+    /**
      * @var float
      */
     private $total;
@@ -132,6 +137,11 @@ class Order
         return $this->total;
     }
 
+    public function getDiscountPercent() : float
+    {
+        return $this->discountPercent->value();
+    }
+
     /**
      * @return int
      */
@@ -161,10 +171,12 @@ class Order
     public function calculateDiscount()
     {
         if ($this->total > 20) {
-            $this->applyDiscountToEachItem(new DiscountPercent(0.15));
+            $this->discountPercent = new DiscountPercent(0.15);
         } else if ($this->total > 10) {
-            $this->applyDiscountToEachItem(new DiscountPercent(0.08));
+            $this->discountPercent = new DiscountPercent(0.08);
         }
+
+        $this->applyDiscountToEachItem($this->discountPercent);
     }
 
     private function applyDiscountToEachItem(DiscountPercent $discountPercent)

@@ -28,7 +28,7 @@ final class OrderStub
         );
     }
 
-    public static function randomWithExact(array $options) : Order
+    public static function randomWithExact(array $options = []) : Order
     {
         $reference    = $options['reference'] ?? ReferenceStub::random();
         $emissionDate = $options['emissionDate'] ?? EmissionDateStub::now();

@@ -63,9 +63,9 @@ final class OrderTest extends TestCase
     /** @test */
     public function it_should_not_apply_discount_when_total_is_lower_than_10() : void
     {
-        $quantity        = 1;
-        $price           = 2;
-        $vat             = 0.21;
+        $quantity = 1;
+        $price    = 2;
+        $vat      = 0.21;
 
         $order = OrderStub::randomWithExact([
             'lineItems' => LineItemsStub::randomExact(2, [

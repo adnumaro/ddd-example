@@ -84,7 +84,13 @@ abstract class Collection implements Iterator, ArrayAccess, Countable
         unset($this->items[$offset]);
     }
 
-    public function count () {
+    public function count()
+    {
         return count($this->items);
+    }
+
+    public function add($item)
+    {
+        array_push($this->items, $item);
     }
 }

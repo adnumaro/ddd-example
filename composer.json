@@ -4,7 +4,6 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "^7.4",
-        "vlucas/phpdotenv": "^4.1",
         "nesbot/carbon": "^2.29"
     },
     "require-dev": {

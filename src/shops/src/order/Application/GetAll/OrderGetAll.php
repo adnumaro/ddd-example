@@ -1,8 +1,8 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Application\GetAll;
+namespace Shops\Order\Application\GetAll;
 
-use PurchaseTest\Shops\Purchase\Application\OrderUseCases;
+use Shops\Order\Application\OrderUseCases;
 
 final class OrderGetAll extends OrderUseCases
 {

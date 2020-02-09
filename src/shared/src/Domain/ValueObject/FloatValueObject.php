@@ -1,6 +1,6 @@
 <?php
 
-namespace PurchaseTest\Shared\Domain\ValueObject;
+namespace Shared\Domain\ValueObject;
 
 abstract class FloatValueObject
 {

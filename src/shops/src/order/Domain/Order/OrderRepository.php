@@ -1,8 +1,8 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Domain\Order;
+namespace Shops\Order\Domain\Order;
 
-use PurchaseTest\Shops\Purchase\Domain\Order\ValueObject\Reference;
+use Shops\Order\Domain\Order\ValueObject\Reference;
 
 interface OrderRepository
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace PurchaseTest\Shops\Purchase\Application;
+namespace Shops\Order\Application;
 
-use PurchaseTest\Shops\Purchase\Domain\Order\OrderRepository;
+use Shops\Order\Domain\Order\OrderRepository;
 
 abstract class OrderUseCases
 {

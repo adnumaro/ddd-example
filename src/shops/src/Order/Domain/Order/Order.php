@@ -174,6 +174,8 @@ class Order
             $this->discountPercent = new DiscountPercent(0.15);
         } else if ($this->total > 10) {
             $this->discountPercent = new DiscountPercent(0.08);
+        } else {
+            $this->discountPercent = new DiscountPercent(0);
         }
 
         $this->applyDiscountToEachItem($this->discountPercent);
